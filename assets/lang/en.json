@@ -1,12 +1,16 @@
 {
-    "fiddles": "Fiddles",
+    "loading_subtitle": "Games & Trifles",
+    "langErr": "Could not load text file.",
+    "trifles": "Trifles",
     "tools": "Tools",
     "tgames": "Tiny Games",
     "games": "Games",
-    "mods": "Mods",
     "blog": "Blog",
     "about": "About",
     "updates": "Updates",
     "settings": "Settings",
-    "missingMessage": "Page not made. I need more time to cook!"
+    "blogLangTemp": "Currently, the only blog entry is in french. Continue anyways?",
+    "missingMessage": "Page in developement. Thank you for your patience!",
+    "missingCredits": "Art by : ",
+    "missingSite": "(web site)"
 }

@@ -13,7 +13,8 @@ export default class MainPage extends HTMLElement {
         this.#createContent()
         this.#s.querySelectorAll("div").forEach(btn => {
             btn.addEventListener("click", () => {
-                NAVIGATION.changePage(btn.getAttribute("to"))
+                if (btn.id != "blog" || TEXTS.language == "fr" || confirm(TEXTS.get("blogLangTemp")))
+                    NAVIGATION.changePage(btn.getAttribute("to"))
             })
         })
     }
@@ -29,16 +30,13 @@ export default class MainPage extends HTMLElement {
 }
 
 const CONTENT = `
-    <main text>
-        <div to="missing"><span>#fiddles</span></div>
-        <div to="missing"><span>#tools</span></div>
-        <div to="missing"><span>#tgames</span></div>
-        <div to="missing"><span>#games</span></div>
-        <div to="missing"><span>#mods</span></div>
-        <div to="missing"><span>#blog</span></div>
-        <div to="missing"><span>#about</span></div>
-        <div to="missing"><span>#updates</span></div>
-        <div to="missing"><span>#settings</span></div>
+    <main>
+        <div to="missing"><img src="./assets/icons/trifles.svg"/></div>
+        <div to="missing"><img src="./assets/icons/tools.svg"/></div>
+        <div to="missing"><img src="./assets/icons/tgames.svg"/></div>
+        <div to="missing"><img src="./assets/icons/games.svg"/></div>
+        <div id="blog" to="blog"><img src="./assets/icons/blog.svg"/></div>
+        <div to="missing"><img src="./assets/icons/settings.svg"/></div>
     </main>
 `
 const STYLE = `
@@ -73,5 +71,10 @@ const STYLE = `
     span {
         font-size: 28px;
         font-family: sans-serif;
+    }
+
+    img {
+        width: 80px;
+        filter: invert(1)
     }
 ` 

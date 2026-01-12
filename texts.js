@@ -42,7 +42,6 @@ const TEXTS = new (class {
 
     /**
      * @param {Node} node 
-     * @param {Array<Node>} nodes
      */
    #scanNode(node) {
        if (node.nodeType == 3) { // Text node
@@ -82,7 +81,7 @@ const TEXTS = new (class {
             loading_subtitle: "Jeux & Bricoles",
             langErr: "Impossible de télécharger le fichier de textes.",
         }, en: {
-            button: "Games & Trifles",
+            loading_subtitle: "Games & Trifles",
             langErr: "Could not load text file.",
         }
     }

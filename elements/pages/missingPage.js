@@ -25,7 +25,12 @@ export default class MissingPage extends HTMLElement {
 
 const CONTENT = `
     <main text>
-        <p title="😭">#missingMessage</p>
+        <figure>
+            <a href="https://marieladouceur.square.site/" target="_target">
+                <img src="./assets/missing.png"/>
+            </a>
+            <figcaption>#missingMessage<br>#missingCredits<a href="https://www.instagram.com/marieladouceur030/" target="_target">@marieladouceur030</a>    <small><a href="https://marieladouceur.square.site/" target="_target">#missingSite</a></small></figcaption>
+        </figure>
     </main>
 `
 const STYLE = `
@@ -38,8 +43,17 @@ const STYLE = `
         display: grid;
         place-items: center;
     }
+    
+    figure {
+        max-width: 60vw; max-height: 60vh;
+        width: 60%; height: 60%;
+    }
 
-    span {
+    img {
+        max-width: 100%; max-height: 100%;
+    }
+
+    figcaption {
         font-size: 20px;
         font-family: sans-serif;
     }
