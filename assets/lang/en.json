@@ -9,7 +9,11 @@
     "about": "About",
     "updates": "Updates",
     "settings": "Settings",
-    "blogLangTemp": "Currently, the only blog entry is in french. Continue anyways?",
+
+    "frOnly": "Only available in french.",
+    "frOnly_open": "This blog entry is currently only available in french. Continue anyways?",
+    "frOnly_cancel": "Understandable, its english version will be available this Sunday. See you then!",
+
     "missingMessage": "Page in developement. Thank you for your patience!",
     "missingCredits": "Art by : ",
     "missingSite": "(web site)"

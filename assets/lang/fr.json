@@ -9,7 +9,11 @@
     "about": "À propos",
     "updates": "Mises à jours",
     "settings": "Paramètres",
-    "blogLangTemp": "",
+
+    "frOnly": "Ne devrait jamais afficher!",
+    "frOnly_open": "Ne devrait jamais afficher!",
+    "frOnly_cancel": "Ne devrait jamais afficher!",
+
     "missingMessage": "Page en construction. Merci de votre patience!",
     "missingCredits": "Art par : ",
     "missingSite": "(site web)"

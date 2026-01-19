@@ -3,12 +3,18 @@ const NAVIGATION = new (class {
     #pageLoad = new CustomEvent("pageload")
 
     #pageUrl = "/elements/pages/"
+    #itemUrl = "/elements/items/"
+    #necessaryItems = ["listItem"]
+
     #loaded = { boop: "page-boop" }
 
+    get contentName() { return history.state["content"] }
+
     constructor() {
-        window.addEventListener("DOMContentLoaded", () => {
+        window.addEventListener("DOMContentLoaded", async () => {
             if (!history.state)
                 history.replaceState({ name: "main" }, "", document.location.href)
+            await this.#loadNecessaryItems()
             this.#displayContent(history.state)
         })
                    
@@ -18,10 +24,15 @@ const NAVIGATION = new (class {
         })
     }
         
-    changePage(name) {
-        let state = { name }
+    changePage(name, contentName = "", forceFrench = false) {
+        let state = { name, content: contentName }
+        if (forceFrench)
+            state["frContent"] = true
         this.#displayContent(state)
-        history.pushState(state, "", `/${name}`)
+        let url = `/${name}`
+        if (contentName)
+            url += `/${contentName}`
+        history.pushState(state, "", url)
     }
 
     #displayContent = async (state) => {
@@ -45,4 +56,16 @@ const NAVIGATION = new (class {
         }
     }
 
+    #loadNecessaryItems = async () => {
+        for (let i = 0; i < this.#necessaryItems.length; i++) {
+            try {
+                const module = await import(`./${this.#itemUrl}${this.#necessaryItems[i]}.js`)
+                customElements.define(module.tagName, module.default)
+            } catch (err) {
+                console.error(err)
+            }
+        }
+    }
+
 })()
+

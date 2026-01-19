@@ -13,8 +13,9 @@ export default class MainPage extends HTMLElement {
         this.#createContent()
         this.#s.querySelectorAll("div").forEach(btn => {
             btn.addEventListener("click", () => {
-                if (btn.id != "blog" || TEXTS.language == "fr" || confirm(TEXTS.get("blogLangTemp")))
-                    NAVIGATION.changePage(btn.getAttribute("to"))
+                let to = btn.getAttribute("to").split("/")
+                let content = to.length > 1 ? to[1] : ""
+                NAVIGATION.changePage(to[0], content)
             })
         })
     }
@@ -31,11 +32,11 @@ export default class MainPage extends HTMLElement {
 
 const CONTENT = `
     <main>
-        <div to="missing"><img src="./assets/icons/trifles.svg"/></div>
-        <div to="missing"><img src="./assets/icons/tools.svg"/></div>
-        <div to="missing"><img src="./assets/icons/tgames.svg"/></div>
-        <div to="missing"><img src="./assets/icons/games.svg"/></div>
-        <div id="blog" to="blog"><img src="./assets/icons/blog.svg"/></div>
+        <div to="list/trifles"><img src="./assets/icons/trifles.svg"/></div>
+        <div to="list/tools"><img src="./assets/icons/tools.svg"/></div>
+        <div to="list/tgames"><img src="./assets/icons/tgames.svg"/></div>
+        <div to="list/games"><img src="./assets/icons/games.svg"/></div>
+        <div to="list/blog"><img src="./assets/icons/blog.svg"/></div>
         <div to="missing"><img src="./assets/icons/settings.svg"/></div>
     </main>
 `
