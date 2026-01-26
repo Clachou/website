@@ -10,11 +10,11 @@ export default class ListPage extends HTMLElement {
 
     constructor() {
         super()
+        this.#s = this.attachShadow({ mode: "closed" })
+        this.#createContent()
     }
 
     connectedCallback() {
-        this.#s = this.attachShadow({ mode: "closed" })
-        this.#createContent()
         this.#type = NAVIGATION.contentName
         this.#s.querySelector("h1").innerText = TEXTS.get(this.#type)
         this.#loadContent()

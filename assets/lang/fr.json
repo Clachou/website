@@ -1,14 +1,16 @@
 {
     "loading_subtitle": "Jeux & Bricoles",
     "langErr": "Impossible de télécharger le fichier de textes.",
+
+    "about": "À propos",
     "trifles": "Bircoles",
     "tools": "Outils",
     "tgames": "P'tit jeux",
     "games": "Jeux",
     "blog": "Le blog",
-    "about": "À propos",
-    "updates": "Mises à jours",
     "settings": "Paramètres",
+    "updates": "Versions",
+    "help": "Aide",
 
     "frOnly": "Ne devrait jamais afficher!",
     "frOnly_open": "Ne devrait jamais afficher!",

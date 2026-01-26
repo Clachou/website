@@ -1,14 +1,16 @@
 {
     "loading_subtitle": "Games & Trifles",
     "langErr": "Could not load text file.",
+    
+    "about": "About",
     "trifles": "Trifles",
     "tools": "Tools",
     "tgames": "Tiny Games",
     "games": "Games",
     "blog": "Blog",
-    "about": "About",
-    "updates": "Updates",
     "settings": "Settings",
+    "updates": "Updates",
+    "help": "Help",
 
     "frOnly": "Only available in french.",
     "frOnly_open": "This blog entry is currently only available in french. Continue anyways?",

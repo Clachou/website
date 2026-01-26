@@ -8,11 +8,11 @@ export default class BlogPage extends HTMLElement {
 
     constructor() {
         super()
+        this.#s = this.attachShadow({ mode: "closed" })
+        this.#createContent()
     }
 
     connectedCallback() {
-        this.#s = this.attachShadow({ mode: "closed" })
-        this.#createContent()
         this.#loadContent()
     }
 

@@ -6,13 +6,10 @@ export default class MissingPage extends HTMLElement {
 
     constructor() {
         super()
-    }
-
-    connectedCallback() {
         this.#s = this.attachShadow({ mode: "closed" })
         this.#createContent()
     }
-
+    
     #createContent() {
         this.#s.innerHTML = CONTENT
         TEXTS.fill(this.#s.firstElementChild)
