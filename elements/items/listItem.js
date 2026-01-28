@@ -27,7 +27,7 @@ export default class ListItemElement extends HTMLElement {
         this.#s.querySelector("p").innerText = values.preview
         this.#s.querySelector("img").setAttribute("src", values.img ? values.img : `${this.#defaultImgUrl}${NAVIGATION.contentName}.svg`)
         if (values.version == "fr") {
-            if (TEXTS.language != "en") {
+            if (TEXTS.language == "en") {
                 this.#frExclusive = true
                 let small = this.#s.querySelector("small") 
                 small.innerText = TEXTS.get("frOnly")

@@ -211,6 +211,8 @@ class Button {
             this.#progress = 0
         } else if (this.#state == Button.STATES.appear) {
             this.#progress = Button.LEAVE_DUR * (1 - this.#progress / Button.APPEAR_DUR)
+        } else {
+            return
         }
         
         Object.assign(this.#start, this.#target)
